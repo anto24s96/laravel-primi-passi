@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $serie_a_teams = [
+        'Juventus', 'Inter', 'Milan', 'Napoli', 'Roma', 'Fiorentina', 'Lazio', 'Udinese'
+    ];
+
+    return view('home', compact('serie_a_teams'));
 });
