@@ -14,9 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+
+    return view('home');
+});
+
+Route::get('/italian_league', function () {
     $serie_a_teams = [
         'Juventus', 'Inter', 'Milan', 'Napoli', 'Roma', 'Fiorentina', 'Lazio', 'Udinese'
     ];
+    return view('italian_league', compact('serie_a_teams'));
+});
 
-    return view('home', compact('serie_a_teams'));
+Route::get('/england_league', function () {
+    $premierLeague_teams = [
+        'Arsenal', 'Manchester-City', 'Liverpool', 'Tottenham', 'Manchester-Utd', 'Newcastle', 'Chelsea', 'Astonvilla'
+    ];
+    return view('england_league', compact('premierLeague_teams'));
 });
